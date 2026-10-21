@@ -168,7 +168,7 @@ var SHARE='Bora pro Baile do Chamego? Sábado, 07/11, às 19h, no Korin Efan, em
 var PREP=[['ing','Ingresso comprado'],['volta','Volta combinada (com quem e como)'],['cel','Celular carregado'],['doc','Documento e um dinheiro à mão']];
 var S=ls('state')||{};
 S.lambes=S.lambes||[]; S.m2=!!S.m2; S.m3=!!S.m3; S.stamps=S.stamps||{}; S.fb=S.fb||null; S.trat=S.trat||''; S.nome=S.nome||''; S.prep=S.prep||{};
-var tab=ls('tab')||'home'; if(['home','role','missoes','guia','perfil'].indexOf(tab)<0)tab='home';
+var tab=ls('tab')||'home'; var hh=(location.hash||'').replace('#',''); if(['home','role','missoes','guia','perfil'].indexOf(hh)>=0)tab=hh; if(['home','role','missoes','guia','perfil'].indexOf(tab)<0)tab='home';
 var chat=[{c:'g',t:'E aí, tudo bem? Eu sou o Guia do desvio.ssa. Bora fugir do cartão-postal? Pergunta do show de sábado, de como chegar ou como voltar.'}];
 
 function save(){ls('state',S)}
