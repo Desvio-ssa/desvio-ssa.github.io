@@ -107,6 +107,7 @@ function render(t){
  // particles
  parts.forEach(m=>{const u=m.userData,q=t-TS;if(q<0||q>1.3){m.visible=false;return}m.visible=true;
   m.position.set(u.vx*q,1.9+u.vy*q-5.5*q*q,.9+u.vz*q);m.rotation.set(q*u.sp,q*u.sp*.7,0);m.scale.setScalar(Math.max(.001,1-q/1.3))});
+ if(t>4.3&&renderer.shadowMap.autoUpdate){renderer.shadowMap.needsUpdate=true;renderer.shadowMap.autoUpdate=false}
  renderer.render(scene,camera)}
 window.DesvioIntro=function(box,onEnd){var raf,t0=0,fin=false;
  function end(){if(fin)return;fin=true;cancelAnimationFrame(raf);onEnd()}

@@ -132,7 +132,7 @@ svg{flex:none}
 .chk[aria-checked="true"] i{background:var(--yellow)}
 .chk[aria-checked="true"] span{text-decoration:line-through;opacity:.65}
 .addr{background:var(--paper);border:3px dashed var(--indigo);border-radius:18px;padding:10px 12px;font-weight:700;font-size:21px;overflow-wrap:anywhere}
-#intro{position:fixed;inset:0;z-index:99999;background-color:#F3F0E8;background-image:linear-gradient(rgba(47,82,217,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(47,82,217,.14) 1px,transparent 1px);background-size:36px 36px;transition:opacity .45s;overflow:hidden}#intro[hidden]{display:none}#intro.out{opacity:0;pointer-events:none}#intro .ib{position:absolute;top:0;bottom:0;left:50%;width:100%;max-width:560px;transform:translateX(-50%)}
+#intro{position:fixed;inset:0;z-index:99999;background-color:#F3F0E8;background-image:linear-gradient(rgba(47,82,217,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(47,82,217,.14) 1px,transparent 1px);background-size:36px 36px;transition:opacity .25s;overflow:hidden}#intro[hidden]{display:none}#intro.out{opacity:0;pointer-events:none}#intro .ib{position:absolute;top:0;bottom:0;left:50%;width:100%;max-width:560px;transform:translateX(-50%)}
 </style>
 
 </head>
@@ -321,7 +321,7 @@ function ask(i){
 render(false);
 (function(){var el=document.getElementById('intro');if(!el)return;var seen=false;try{seen=sessionStorage.getItem('intro')==='1'}catch(e){}
 var force=/[?&]intro\b/.test(location.search);if(seen&&!force)return;var done=false,shown=false;
-function fim(){if(done)return;done=true;try{sessionStorage.setItem('intro','1')}catch(e){}el.classList.add('out');setTimeout(function(){el.hidden=true},500);try{if(shown&&window.track)track('abertura-vista')}catch(e){}}
+function fim(){if(done)return;done=true;try{sessionStorage.setItem('intro','1')}catch(e){}el.classList.add('out');setTimeout(function(){el.hidden=true},300);try{if(shown&&window.track)track('abertura-vista')}catch(e){}}
 function fail(){if(done)return;done=true;el.hidden=true}
 var lt=setTimeout(fail,9000);
 function ld(src,cb){var x=document.createElement('script');x.src=src;x.onload=cb;x.onerror=fail;document.head.appendChild(x)}
