@@ -144,7 +144,7 @@ svg{flex:none}
 <script>
 (function(){
 var LOGO="logo.png", PHOTO='banda.jpg';
-var FORM_URL='', GC_CODE='desviossa';
+var FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSf7BxV3MmY2XCMfU0sx0Ba6B8oINCZFIg0p5yftcMX34A9ydA/viewform', GC_CODE='desviossa';
 function track(n){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:n,event:true})}catch(e){}}
 function initGC(){if(!GC_CODE)return;var sc=document.createElement('script');sc.async=true;sc.setAttribute('data-goatcounter','https://'+GC_CODE+'.goatcounter.com/count');sc.src='https://gc.zgo.at/count.js';document.head.appendChild(sc)}
 var $=function(s,r){return (r||document).querySelector(s)};
@@ -309,7 +309,7 @@ function sendFb(){
  if(!S.fb){m.textContent='Escolha uma opção primeiro.';m.className='warn';return}
  track('bateu-certo-'+S.fb);
  ls('fb-pending',{voto:S.fb,texto:($('#fb-txt').value||'').slice(0,240),em:new Date().toISOString()});
- if(FORM_URL){m.innerHTML='Valeu! Pra o retorno chegar até nós, <a href="'+FORM_URL+'" target="_blank" rel="noopener">toque aqui e conte em uma linha</a>. Bora de novo?';m.className='ok'}
+ if(FORM_URL){m.innerHTML='Valeu! Pra o retorno chegar até nós, <a href="'+FORM_URL+'" target="_blank" rel="noopener">toque aqui e responda em 2 minutinhos</a>. Bora de novo?';m.className='ok'}
  else{m.textContent=GC_CODE?'Valeu! Seu voto foi contado. Bora de novo?':'Valeu! Bora de novo?';m.className='ok'}
 }
 function ask(i){
