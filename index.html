@@ -319,9 +319,9 @@ function ask(i){
 }
 
 render(false);
-(function(){var el=document.getElementById('intro');if(!el)return;var seen=false;try{seen=localStorage.getItem('intro')==='1'}catch(e){}
+(function(){var el=document.getElementById('intro');if(!el)return;var seen=false;try{seen=sessionStorage.getItem('intro')==='1'}catch(e){}
 var force=/[?&]intro\b/.test(location.search);if(seen&&!force)return;el.hidden=false;var v=document.getElementById('introv'),done=false;
-function fim(p){if(done)return;done=true;try{localStorage.setItem('intro','1')}catch(e){}el.classList.add('out');setTimeout(function(){el.hidden=true},500);try{if(window.track)track(p?'abertura-pulada':'abertura-vista')}catch(e){}}
+function fim(p){if(done)return;done=true;try{sessionStorage.setItem('intro','1')}catch(e){}el.classList.add('out');setTimeout(function(){el.hidden=true},500);try{if(window.track)track(p?'abertura-pulada':'abertura-vista')}catch(e){}}
 document.getElementById('introskip').onclick=function(){fim(true)};v.onended=function(){fim(false)};v.onerror=function(){fim(true)};
 var pr=v.play();if(pr&&pr.catch)pr.catch(function(){fim(true)});setTimeout(function(){fim(false)},8000)})();
 initGC();
