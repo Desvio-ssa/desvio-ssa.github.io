@@ -132,12 +132,12 @@ svg{flex:none}
 .chk[aria-checked="true"] i{background:var(--yellow)}
 .chk[aria-checked="true"] span{text-decoration:line-through;opacity:.65}
 .addr{background:var(--paper);border:3px dashed var(--indigo);border-radius:18px;padding:10px 12px;font-weight:700;font-size:21px;overflow-wrap:anywhere}
-#intro{position:fixed;inset:0;z-index:99999;background:#F3F0E8;display:flex;align-items:center;justify-content:center;transition:opacity .45s}#intro[hidden]{display:none}#intro.out{opacity:0;pointer-events:none}#intro video{width:100%;height:100%;object-fit:cover;max-width:560px}#intro #introtap{top:auto;bottom:5%;right:auto;left:50%;transform:translateX(-50%);font-size:20px;padding:10px 18px}#intro button{position:absolute;top:max(16px,env(safe-area-inset-top));right:16px;font:700 15px 'Barlow Condensed',sans-serif;letter-spacing:2px;text-transform:uppercase;background:#FBF9F3;color:#1C2A72;border:2px solid #1C2A72;box-shadow:3px 3px 0 #1C2A72;padding:6px 12px;cursor:pointer}
+#intro{position:fixed;inset:0;z-index:99999;background:#F3F0E8;display:flex;align-items:center;justify-content:center;transition:opacity .45s}#intro[hidden]{display:none}#intro.out{opacity:0;pointer-events:none}#intro video{width:100%;height:100%;object-fit:cover;max-width:560px}
 </style>
 
 </head>
 <body>
-<div id="intro" hidden><video id="introv" poster="abertura-poster.jpg" muted playsinline preload="auto"><source src="abertura.mp4" type="video/mp4"><source src="abertura.webm" type="video/webm"></video><button id="introtap" type="button" hidden>Toque para começar</button><button id="introskip" type="button">Pular</button></div>
+<div id="intro" hidden><video id="introv" poster="abertura-poster.jpg" muted playsinline preload="auto"><source src="abertura.mp4" type="video/mp4"><source src="abertura.webm" type="video/webm"></video></div>
 <div class="wrap" id="app"></div>
 <nav aria-label="Navegação"><div class="bar2" id="nav"></div></nav>
 
@@ -322,9 +322,8 @@ render(false);
 (function(){var el=document.getElementById('intro');if(!el)return;var seen=false;try{seen=sessionStorage.getItem('intro')==='1'}catch(e){}
 var force=/[?&]intro\b/.test(location.search);if(seen&&!force)return;el.hidden=false;var v=document.getElementById('introv'),done=false;
 function fim(p){if(done)return;done=true;try{sessionStorage.setItem('intro','1')}catch(e){}el.classList.add('out');setTimeout(function(){el.hidden=true},500);try{if(window.track)track(p?'abertura-pulada':'abertura-vista')}catch(e){}}
-document.getElementById('introskip').onclick=function(){fim(true)};v.onended=function(){fim(false)};v.onerror=function(){fim(true)};
-var tm=setTimeout(function(){fim(false)},9000);function toque(){var h=document.getElementById('introtap');if(h)h.hidden=false;clearTimeout(tm);el.onclick=function(){el.onclick=null;if(h)h.hidden=true;var q=v.play();if(q&&q.catch)q.catch(function(){fim(true)});tm=setTimeout(function(){fim(false)},9000)}}
-var pr=v.play();if(pr&&pr.catch)pr.catch(toque)})();
+v.onended=function(){fim(false)};v.onerror=function(){fim(true)};
+setTimeout(function(){fim(false)},9000);var pr=v.play();if(pr&&pr.catch)pr.catch(function(){fim(true)})})();
 initGC();
 setInterval(function(){if(tab==='home')render(true)},60000);
 })();
