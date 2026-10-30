@@ -10,7 +10,12 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://desvio-ssa.github.io/icone.png">
 <link rel="icon" href="icone.png">
-<link rel="apple-touch-icon" href="icone.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="desvio.ssa">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <title>desvio.ssa</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow+Condensed:wght@500;600;700&display=swap">
 <style>
@@ -260,6 +265,44 @@ svg{flex:none}
 .chk[aria-checked="true"] span{text-decoration:line-through;opacity:.65}
 .addr{background:var(--paper);border:3px dashed var(--indigo);border-radius:16px;padding:10px 12px;font-weight:700;font-size:21px;overflow-wrap:anywhere}
 #intro{position:fixed;inset:0;z-index:99999;background-color:#F3F0E8;background-image:linear-gradient(45deg,transparent 46%,rgba(47,82,217,.07) 46%,rgba(47,82,217,.07) 54%,transparent 54%),linear-gradient(-45deg,transparent 46%,rgba(47,82,217,.07) 46%,rgba(47,82,217,.07) 54%,transparent 54%),linear-gradient(rgba(47,82,217,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(47,82,217,.14) 1px,transparent 1px);background-size:36px 36px;transition:opacity .25s;overflow:hidden}#intro[hidden]{display:none}#intro.out{opacity:0;pointer-events:none}#intro .ib{position:absolute;top:0;bottom:0;left:50%;width:100%;max-width:560px;transform:translateX(-50%)}
+
+/* Novidades: É hoje, álbum, instalar */
+.hoje{position:relative;overflow:hidden;border-radius:28px;border:3px solid var(--indigo);box-shadow:6px 6px 0 var(--indigo);padding:20px 18px 22px;display:flex;flex-direction:column;gap:6px;color:var(--stone);
+  background-color:var(--yellow);background-image:linear-gradient(45deg,transparent 46%,rgba(28,42,114,.07) 46%,rgba(28,42,114,.07) 54%,transparent 54%),linear-gradient(-45deg,transparent 46%,rgba(28,42,114,.07) 46%,rgba(28,42,114,.07) 54%,transparent 54%),linear-gradient(rgba(28,42,114,.12) 2px,transparent 2px),linear-gradient(90deg,rgba(28,42,114,.12) 2px,transparent 2px);background-size:44px 44px}
+.hoje .eyebrow{color:var(--indigo)}
+.hoje h1{font-size:56px;color:var(--indigo);max-width:68%}
+.hoje p{font-weight:700;font-size:21px;line-height:1.15;max-width:100%}
+.hoje .lg{position:absolute;right:16px;top:18px;width:92px;height:92px;border-radius:18px;border-width:3px;box-shadow:5px 5px 0 var(--indigo);animation:sp3 5s ease-in-out infinite}
+@keyframes sp3{0%,100%{transform:perspective(500px) rotate(-6deg) rotateY(0)}50%{transform:perspective(500px) rotate(-3deg) rotateY(28deg) translateY(-6px)}}
+.hj-cd{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+.hj-cd b{font-family:var(--display);font-weight:400;font-size:38px;line-height:1;background:var(--indigo);color:var(--yellow);border-radius:14px;padding:6px 14px;box-shadow:4px 4px 0 #0d1440;transform:rotate(-2deg)}
+.hj-cd small{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:15px}
+.alb{display:flex;gap:12px;align-items:center;text-decoration:none;color:var(--indigo);padding:16px 14px 16px 16px;transition:transform .12s,box-shadow .12s}
+.alb:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--indigo)}
+.alb .cvw{position:relative;width:78px;height:78px;flex:none;margin-right:12px}
+.alb .disc{position:absolute;left:26px;top:4px;width:70px;height:70px;border-radius:50%;background:repeating-radial-gradient(circle,#25262B 0 3px,#33353c 3px 5px);border:2px solid #0d1440;transition:left .4s}
+.alb .disc::after{content:"";position:absolute;inset:25px;border-radius:50%;background:var(--yellow)}
+.alb:hover .disc,.alb:focus-visible .disc{left:30px}
+.alb .cv{position:absolute;inset:0;border-radius:12px;border:3px solid var(--indigo);background:center/cover;box-shadow:3px 3px 0 var(--indigo);transform:rotate(-3deg)}
+.alb .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.alb .eyebrow{font-size:14px;letter-spacing:.14em}
+.alb b{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.05}
+.alb small{color:var(--mute);font-size:17px;font-weight:600;line-height:1.15}
+.alb .play{width:48px;height:48px;flex:none;border-radius:50%;background:var(--yellow);color:var(--stone);border:3px solid var(--indigo);display:grid;place-items:center;box-shadow:3px 3px 0 var(--indigo)}
+.inst{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding-right:40px}
+.inst .lg{width:54px;height:54px;border-radius:12px}
+.inst .tx{flex:1 1 170px;min-width:0}
+.inst b{font-size:22px;display:block;line-height:1.1}
+.inst small{color:var(--mute);font-size:17px}
+.inst .cta{padding:10px 18px;font-size:17px}
+.inst .x{position:absolute;right:8px;top:6px;background:none;border:none;font-size:30px;color:var(--mute);cursor:pointer;line-height:1;padding:4px 10px}
+.dinst{display:flex;align-items:center;gap:10px;width:100%;background:var(--yellow);color:var(--stone);border:2.5px solid #0d1440;border-radius:16px;padding:10px 12px;font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:3px 3px 0 #0d1440}
+.sheet-wrap{position:fixed;inset:0;z-index:30;background:rgba(13,20,64,.45);display:flex;align-items:flex-end;justify-content:center;opacity:0;transition:opacity .25s}
+.sheet-wrap.on{opacity:1}
+.sheet{width:100%;max-width:520px;background:var(--card);color:var(--indigo);border:3px solid var(--indigo);border-bottom:none;border-radius:28px 28px 0 0;padding:22px 18px calc(22px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:12px;transform:translateY(40px);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.sheet-wrap.on .sheet{transform:none}
+.sheet h2{font-size:28px}
+.sheet ol{margin:0;padding-left:26px;display:flex;flex-direction:column;gap:8px;font-size:21px}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}body.menu .wrap{transform:none}.pin{margin-top:-52px}}
 </style>
 
@@ -272,7 +315,7 @@ svg{flex:none}
 <aside class="drawer" id="drawer" aria-label="Menu" aria-hidden="true">
  <div class="dhead"><div class="lg" aria-hidden="true"></div><div><div class="wm">desvio<i></i><span>ssa</span></div><small>Salvador sem cartão-postal</small></div><button class="dclose" id="dclose" aria-label="Fechar menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
  <nav class="dnav" id="nav" aria-label="Navegação"></nav>
- <div class="dfoot"><span class="pill"><b></b>Piloto</span><span>Santo Antônio Além do Carmo · Salvador</span></div>
+ <div class="dfoot"><button class="dinst" id="dinst" data-inst="d" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>Instalar na tela inicial</button><span class="pill"><b></b>Piloto</span><span>Santo Antônio Além do Carmo · Salvador</span></div>
 </aside>
 
 <script>
@@ -310,8 +353,16 @@ var chat=[{c:'g',t:'E aí, tudo bem? Eu sou o Guia do desvio.ssa. Bora fugir do 
 var justStamped=false;
 
 function save(){ls('state',S)}
-function days(){var d=Date.UTC(2026,10,7,22,0,0)-Date.now(); if(d<=0)return 0; return Math.ceil(d/864e5)}
-function when(){var d=days(); return d===0?'hoje':d===1?'amanhã':'em '+d+' dias'}
+var SHOW=Date.UTC(2026,10,7,22,0,0); /* sáb 07/11, 19h em Salvador */
+var SIM=location.search.match(/[?&]dia=(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}))?/); /* teste: ?dia=2026-11-07T17 */
+function now(){return SIM?Date.UTC(+SIM[1],+SIM[2]-1,+SIM[3],(SIM[4]?+SIM[4]:15)+3,0,0):Date.now()}
+function dayDiff(){var b=new Date(now()-3*36e5);return Math.round((Date.UTC(2026,10,7)-Date.UTC(b.getUTCFullYear(),b.getUTCMonth(),b.getUTCDate()))/864e5)}
+function days(){return Math.max(0,dayDiff())}
+function when(){var d=dayDiff(); return d<0?'rolou':d===0?'hoje':d===1?'amanhã':'em '+d+' dias'}
+function falta(){var m=Math.ceil((SHOW-now())/6e4); if(m<=0)return ''; var h=Math.floor(m/60),mi=m%60; return h>0?h+'h'+(mi<10?'0':'')+mi:mi+' min'}
+var SPOTIFY='https://open.spotify.com/album/1FzG1DFyKjVRX9CRqYVwMk';
+var deferredPrompt=null, standalone=!!((window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true);
+var UA=navigator.userAgent||'', IG=/Instagram|FBAN|FBAV/.test(UA), IOS=/iPhone|iPad|iPod/.test(UA)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
 function selos(){var n=0;['sa'].forEach(function(k){if(S.stamps[k])n++}); return n}
 function missionsDone(){return (S.lambes.length>=3?1:0)+(S.m2?1:0)+(S.m3?1:0)}
 function greet(){var n=S.nome?esc(S.nome):'';var t=S.trat==='pivete'?'meu pivete':S.trat==='piveta'?'minha piveta':n;return t?'Qual a boa de hoje, '+t+'?':'Qual a boa de hoje?'}
@@ -328,12 +379,36 @@ function wall(){var a=['az-creme','az-cobalto','az-ceu','az-indigo','D','az-crem
  return '<div class="h3d-sc" aria-hidden="true"><div class="wall" id="wall"><div class="sh"></div>'+a.map(function(k){return k==='D'?'<div class="t d" style="background-image:url(az-d.webp)"></div>':'<div class="t" style="background-image:url('+k+'.webp)"></div>'}).join('')+'</div></div>'}
 
 function vHome(){
- var l=S.lambes.length, d=days();
- var cd=d>1?'<div class="cd"><b>'+d+'</b><small>dias</small></div>':'<div class="cd w">'+when()+'</div>';
+ var l=S.lambes.length, dd=dayDiff();
+ if(dd===0)return vHoje();
+ var cd=dd>1?'<div class="cd"><b>'+dd+'</b><small>dias</small></div>':'<div class="cd w">'+when()+'</div>';
  return '<section class="h3d" id="h3d">'+wall()+'<div class="h3d-tx"><div class="eyebrow">Salvador</div><h1>Bora desviar?</h1><p>'+greet()+'</p></div></section>'+
  '<div class="card map"><div class="map3d"><div class="mapin">'+mapSvg()+'</div><div class="pin" id="pin1"><span>1</span></div></div><div class="foot"><span>Seu desvio de hoje</span><b>1 parada · 2 em breve</b></div></div>'+
- '<button class="card stop" data-go="role"><div class="ph" style="background-image:url('+PHOTO+')"></div><div class="tx"><div class="eyebrow">Próxima parada</div><h3>Baile do Chamego · forró ao vivo</h3><div class="m">Santo Antônio Além do Carmo · sáb, 07/11, 19h</div></div>'+cd+'</button>'+
- '<button class="card mission" data-go="missoes"><div class="ic">'+ic('flag',26)+'</div><div style="flex:1;min-width:0"><b>Missão do dia: ache 3 lambes</b><div class="bar"><i style="width:'+Math.round(l/3*100)+'%"></i></div></div><span class="num">'+l+'/3</span></button>'
+ '<button class="card stop" data-go="role"><div class="ph" style="background-image:url('+PHOTO+')"></div><div class="tx"><div class="eyebrow">'+(dd<0?'Último rolê':'Próxima parada')+'</div><h3>Baile do Chamego · forró ao vivo</h3><div class="m">Santo Antônio Além do Carmo · sáb, 07/11, 19h</div></div>'+cd+'</button>'+
+ '<button class="card mission" data-go="missoes"><div class="ic">'+ic('flag',26)+'</div><div style="flex:1;min-width:0"><b>Missão do dia: ache 3 lambes</b><div class="bar"><i style="width:'+Math.round(l/3*100)+'%"></i></div></div><span class="num">'+l+'/3</span></button>'+
+ (dd<0?'<button class="card" data-go="role" style="display:flex;flex-direction:column;gap:4px"><div class="eyebrow">Depois do rolê</div><b style="font-size:23px;line-height:1.1">Foi no Baile? Conta pra gente no Bateu certo.</b></button>':'')+
+ installCard()
+}
+function vHoje(){
+ var f=falta(), started=!f;
+ var dica='<div class="dica"><span class="eyebrow">Volta segura</span>Se liga: vá e volte em grupo ou combine a volta antes de sair. Guarde o celular enquanto anda na rua e peça o carro de aplicativo ainda dentro do local.<small>Dica geral do piloto. Vamos validar por bairro e horário com fontes locais.</small></div>';
+ return '<section class="hoje"><div class="lg" aria-hidden="true"></div><div class="eyebrow">Sábado, 07/11</div><h1>É hoje!</h1><p>Baile do Chamego, Forró da Gota e DJ Preta no Korin Efan.</p>'+
+ '<div class="hj-cd">'+(started?'<b>Já começou</b><small>desde as 19h</small>':'<small>começa em</small><b>'+f+'</b><small>às 19h</small>')+'</div></section>'+
+ (started?stampBlock():'')+prepCard()+dica+(started?'':stampBlock())+
+ '<div class="btns"><a class="cta p" href="https://www.instagram.com/chamegobaile/" target="_blank" rel="noopener">Ver ingresso</a><button class="cta s" data-go="guia">Falar com o Guia</button><button class="cta s" data-copy="share">Compartilhar o rolê</button></div><p id="cp-msg" class="note" role="status"></p>'+
+ installCard()
+}
+function installCard(){
+ if(standalone||ls('inst-off'))return '';
+ return '<div class="card inst"><div class="lg" aria-hidden="true"></div><div class="tx"><div class="eyebrow">Leva o desvio no bolso</div><b>Coloque o app na tela inicial</b><small>Abre em tela cheia, sem baixar nada da loja.</small></div><button class="cta y" data-inst="h">Instalar</button><button class="x" data-inst-off="1" aria-label="Agora não">×</button></div>'
+}
+function sheet(html){var w=document.createElement('div');w.className='sheet-wrap';w.innerHTML='<div class="sheet" role="dialog" aria-modal="true" aria-label="Como instalar">'+html+'<button class="cta p" data-sheet-close="1">Entendi</button></div>';document.body.appendChild(w);requestAnimationFrame(function(){w.classList.add('on')});var b=w.querySelector('[data-sheet-close]');try{b.focus({preventScroll:true})}catch(e){}}
+function doInstall(){
+ track('instalar-clique');
+ if(deferredPrompt){var dp=deferredPrompt;deferredPrompt=null;dp.prompt();dp.userChoice.then(function(c){track('instalar-'+c.outcome);render(true)}).catch(function(){});return}
+ if(IG)sheet('<h2>Abra no navegador</h2><p>Dentro do Instagram não dá pra instalar. É rapidinho:</p><ol><li>Toque nos três pontinhos no canto da tela.</li><li>Escolha <b>Abrir no navegador</b>.</li><li>Lá, toque em <b>Instalar</b> de novo.</li></ol>');
+ else if(IOS)sheet('<h2>No iPhone é assim</h2><ol><li>No Safari, toque em <b>Compartilhar</b> (o quadrado com a seta pra cima).</li><li>Escolha <b>Adicionar à Tela de Início</b>.</li><li>Toque em <b>Adicionar</b>. O D do desvio aparece junto dos seus apps.</li></ol>');
+ else sheet('<h2>Quase lá</h2><ol><li>Toque no menu do navegador (os três pontinhos).</li><li>Escolha <b>Instalar app</b> ou <b>Adicionar à tela inicial</b>.</li></ol>');
 }
 
 function prepCard(){
@@ -352,7 +427,7 @@ function copyText(t,msgId){
 function vRole(){
  var fb=S.fb;
  return '<div class="hero" style="background-image:url('+PHOTO+')"><button class="roundbtn" data-go="home" aria-label="Voltar">'+ic('back',26)+'</button><small>Foto: Heder Novaes</small>'+
- '<div class="hcap"><span class="tag">Show ao vivo</span><h2>Baile do Chamego</h2><p>Forró · Santo Antônio Além do Carmo</p></div></div>'+
+ '<div class="hcap"><span class="tag">'+(dayDiff()===0?'É hoje · show ao vivo':'Show ao vivo')+'</span><h2>Baile do Chamego</h2><p>Forró · Santo Antônio Além do Carmo</p></div></div>'+
  '<p>Banda de 4 pessoas com repertório próprio e músicas de outros artistas. Forró gostoso de ouvir, sem medo de misturar outros ritmos. Na mesma noite: Forró da Gota e DJ Preta.</p>'+
  '<div class="tri">'+
  '<div class="card"><div class="ci">'+ic('clock',22)+'</div><small>QUANDO</small><b>Sáb, 07/11<br>19h</b></div>'+
@@ -360,6 +435,7 @@ function vRole(){
  '<div class="card"><div class="ci">'+ic('pin',22)+'</div><small>ONDE</small><b>Korin<br>Efan</b></div></div>'+
  '<div class="tk"><div class="tkin"><div class="tk-top"><span class="eyebrow">Desconto do desvio</span><b>Veio do desvio? Tem desconto no ingresso.</b></div>'+
  '<div class="tk-bot"><p>Abra o perfil do @chamegobaile, toque em <b>Mensagem</b> e diga "Desvio" para receber o link com o desconto.</p><a class="cta y" href="https://www.instagram.com/chamegobaile/" target="_blank" rel="noopener" onclick="try{track(\'desconto-dm\')}catch(e){}">Abrir o perfil do Chamego</a></div></div></div>'+
+ '<a class="card alb" href="'+SPOTIFY+'" target="_blank" rel="noopener"><div class="cvw"><div class="disc"></div><div class="cv" style="background-image:url(album.jpg)"></div></div><div class="tx"><div class="eyebrow">'+(dayDiff()<0?'Ouça o álbum':'Ouça antes do show')+'</div><b>Baile do Chamego</b><small>O álbum da banda no Spotify. Chega no baile sabendo cantar.</small></div><span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"/></svg></span></a>'+
  prepCard()+'<div class="dica"><span class="eyebrow">Dica do Guia</span>Se liga: vá e volte em grupo ou combine a volta antes de sair. Guarde o celular enquanto anda na rua e peça o carro de aplicativo ainda dentro do local.<small>Dica geral do piloto. Vamos validar por bairro e horário com fontes locais.</small></div>'+
  '<div class="card mission"><div class="ic">'+ic('flag',26)+'</div><div><span class="eyebrow" style="color:var(--stone)">Missão do lugar</span><b>Vá ao show e ganhe o selo do bairro.</b></div></div>'+
  '<div class="btns"><a class="cta p" href="https://www.instagram.com/chamegobaile/" target="_blank" rel="noopener">Ver ingresso</a><button class="cta s" data-go="guia">Falar com o Guia</button><button class="cta s" data-copy="share">Compartilhar o rolê</button></div><p id="cp-msg" class="note" role="status"></p>'+
@@ -409,7 +485,8 @@ var VIEWS={home:vHome,role:vRole,missoes:vMissoes,guia:vGuia,perfil:vPerfil};
 function nav(){
  var n=selos();
  function b(t,i,l,d){return '<button data-go="'+t+'" aria-current="'+(tab===t)+'"><span class="di">'+ic(i,24)+'</span><span class="dt"><b>'+l+'</b><small>'+d+'</small></span></button>'}
- $('#nav').innerHTML=b('home','home','Início','Seu desvio de hoje')+b('role','pin','Rolê','Baile do Chamego · sáb, 07/11')+b('guia','mic','Guia','Respostas verificadas')+b('missoes','flag','Missões',n+' de 6 selos')+b('perfil','user','Perfil','Como quer ser chamado');
+ var di=$('#dinst'); if(di)di.hidden=standalone;
+ $('#nav').innerHTML=b('home','home','Início','Seu desvio de hoje')+b('role','pin','Rolê',dayDiff()===0?'É hoje · 19h no Korin Efan':'Baile do Chamego · sáb, 07/11')+b('guia','mic','Guia','Respostas verificadas')+b('missoes','flag','Missões',n+' de 6 selos')+b('perfil','user','Perfil','Como quer ser chamado');
 }
 function menu(open){document.body.classList.toggle('menu',open);$('#mbtn').setAttribute('aria-expanded',String(open));$('#drawer').setAttribute('aria-hidden',String(!open));
  try{if(open){var a=$('#nav [aria-current="true"]');if(a)a.focus({preventScroll:true})}else $('#mbtn').focus({preventScroll:true})}catch(e){}}
@@ -438,10 +515,14 @@ window.addEventListener('resize',function(){if(tab==='home')placePin()});
 
 document.addEventListener('click',function(e){
  if(e.target.id==='scrim'){menu(false);return}
+ if(e.target.classList&&e.target.classList.contains('sheet-wrap')){e.target.remove();return}
  var el=e.target.closest('button,a'); if(!el)return;
  if(el.id==='mbtn'){menu(true);return}
+ if(el.dataset.sheetClose){var sw=el.closest('.sheet-wrap');if(sw)sw.remove();return}
+ if(el.dataset.inst){if(document.body.classList.contains('menu'))menu(false);doInstall();return}
+ if(el.dataset.instOff){ls('inst-off',1);render(true);return}
  if(el.id==='dclose'){menu(false);return}
- if(el.tagName==='A'){var hf=el.getAttribute('href')||'';track(hf.indexOf('instagram')>-1?'clique-ingresso':'abrir-mapa')}
+ if(el.tagName==='A'){var hf=el.getAttribute('href')||'';track(hf.indexOf('instagram')>-1?'clique-ingresso':hf.indexOf('spotify')>-1?'ouvir-spotify':hf.indexOf('google.com/maps')>-1?'abrir-mapa':hf.indexOf('docs.google')>-1?'bateu-certo-form':'link')}
  if(el.dataset.go){go(el.dataset.go);return}
  if(el.dataset.l){var i=el.dataset.l,k=S.lambes.indexOf(i);if(k>-1)S.lambes.splice(k,1);else S.lambes.push(i);save();render(true);return}
  if(el.dataset.m){S[el.dataset.m]=!S[el.dataset.m];save();render(true);return}
@@ -493,6 +574,9 @@ ld('three.min.js',function(){ld('abertura.js',function(){if(done)return;
  var ib=document.createElement('div');ib.className='ib';el.appendChild(ib);el.hidden=false;
  try{DesvioIntro(ib,fim).then(function(){clearTimeout(lt);shown=true}).catch(fail)}catch(e){fail()}})})})();
 initGC();
+window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferredPrompt=e});
+window.addEventListener('appinstalled',function(){track('app-instalado');deferredPrompt=null;standalone=true;render(true)});
+if('serviceWorker' in navigator&&location.protocol!=='file:'){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
 setInterval(function(){if(tab==='home')render(true)},60000);
 })();
 </script>
